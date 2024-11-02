@@ -1,5 +1,38 @@
 # Changelog
 
+## [0.2.0](https://github.com/flashinfer-ai/flashinfer/compare/v0.1.6...v0.2.0) (2024-11-02)
+
+
+### Features
+
+* add a `use_softmax` field in variant class ([#533](https://github.com/flashinfer-ai/flashinfer/issues/533)) ([d81af97](https://github.com/flashinfer-ai/flashinfer/commit/d81af9775e56bb30152b17770e804823cddfc279))
+* add gemma_rmsnorm and gemma_fused_add_rmsnorm ([#477](https://github.com/flashinfer-ai/flashinfer/issues/477)) ([1a6b17e](https://github.com/flashinfer-ai/flashinfer/commit/1a6b17e2b78fc811d50030b9326a4d01f1ff956f))
+* add group size 3 to GQA decode dispatch ([#558](https://github.com/flashinfer-ai/flashinfer/issues/558)) ([6227562](https://github.com/flashinfer-ai/flashinfer/commit/62275625f9332e40a69789467835cbb376f2940d))
+* JIT compilation ([#507](https://github.com/flashinfer-ai/flashinfer/issues/507)) ([3613a5b](https://github.com/flashinfer-ai/flashinfer/commit/3613a5bd829234863a96bc23e3bd2a1da345a592))
+* modify group-gemm stage number ([#497](https://github.com/flashinfer-ai/flashinfer/issues/497)) ([52dab1d](https://github.com/flashinfer-ai/flashinfer/commit/52dab1d4a4d7e5d910a8c695de911d979d6f2038))
+* non-contiguous query with paged kv cache ([#553](https://github.com/flashinfer-ai/flashinfer/issues/553)) ([89f2c4a](https://github.com/flashinfer-ai/flashinfer/commit/89f2c4a816ff133e09cb9fc1d7c3de43d4431ffd))
+* support huggingface transformer style rope interface ([#568](https://github.com/flashinfer-ai/flashinfer/issues/568)) ([4f40420](https://github.com/flashinfer-ai/flashinfer/commit/4f40420e24d65cabd8be731e12f96a5ef0795a4b))
+* support sm90 cutlass group gemm ([#509](https://github.com/flashinfer-ai/flashinfer/issues/509)) ([794bdda](https://github.com/flashinfer-ai/flashinfer/commit/794bdda1ea2d62d4d2c0e858553058ad890ee5e3))
+* torch custom_op fix for rope ([#569](https://github.com/flashinfer-ai/flashinfer/issues/569)) ([3e104bc](https://github.com/flashinfer-ai/flashinfer/commit/3e104bc7769735af83ffc709fe1f7a641f2471da))
+* torch custom_op support: norm ([#552](https://github.com/flashinfer-ai/flashinfer/issues/552)) ([f6e0010](https://github.com/flashinfer-ai/flashinfer/commit/f6e0010833f54a5b8181a9232588649f0b3c182e))
+* torch.compile and custom_op support ([#554](https://github.com/flashinfer-ai/flashinfer/issues/554)) ([9bf916f](https://github.com/flashinfer-ai/flashinfer/commit/9bf916f236139f5b6410e298615d0db152e82409))
+
+
+### Bug Fixes
+
+* AOT compiler flags on non-sm90 ([#522](https://github.com/flashinfer-ai/flashinfer/issues/522)) ([0aa4726](https://github.com/flashinfer-ai/flashinfer/commit/0aa47269f9f06f20e4a15662931972c9a2de482f))
+* batch decode kernel redundant store output to gmem ([#505](https://github.com/flashinfer-ai/flashinfer/issues/505)) ([90e42a7](https://github.com/flashinfer-ai/flashinfer/commit/90e42a7307dad08bc1f800efb3d73a3bd22a0824))
+* compatible with torch 2.2 ([#478](https://github.com/flashinfer-ai/flashinfer/issues/478)) ([ac41d1b](https://github.com/flashinfer-ai/flashinfer/commit/ac41d1bdc72ed4614c9eafb8644d45b234260005))
+* remove redundant load ([#495](https://github.com/flashinfer-ai/flashinfer/issues/495)) ([2de16b0](https://github.com/flashinfer-ai/flashinfer/commit/2de16b0f4afbb9d3c5725187ee2f14ef08fa364f))
+* update bmm fp8 test ([#487](https://github.com/flashinfer-ai/flashinfer/issues/487)) ([45eac04](https://github.com/flashinfer-ai/flashinfer/commit/45eac04f9420b2372737d16d51f4d07bf928d293))
+
+
+### Performance Improvements
+
+* improve plan performance by using non-blocking memcpy ([#547](https://github.com/flashinfer-ai/flashinfer/issues/547)) ([41ebe6d](https://github.com/flashinfer-ai/flashinfer/commit/41ebe6dce7c505801853a27246feea2e06500620))
+* remove unnecessary contiguous operation in block sparse attention ([#561](https://github.com/flashinfer-ai/flashinfer/issues/561)) ([7a7ad46](https://github.com/flashinfer-ai/flashinfer/commit/7a7ad4659a7b7e1a78eebbb9bb8af6c21130f14e))
+* use cuda-core implemention for io-bound block-sparse attention ([#560](https://github.com/flashinfer-ai/flashinfer/issues/560)) ([3fbf028](https://github.com/flashinfer-ai/flashinfer/commit/3fbf02800e6166d2bf9e1de1cfa6ac826fa4618d))
+
 ## [0.1.6](https://github.com/flashinfer-ai/flashinfer/compare/v0.1.5...v0.1.6) (2024-08-27)
 
 ### SM75 Support
